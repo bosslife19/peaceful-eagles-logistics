@@ -530,3 +530,47 @@ html{overflow-x:hidden}
   body.menu-open{overflow:hidden}
 }
 .menu-open .wa,.menu-open .to-top{opacity:0;pointer-events:none}
+
+/* ===== Hero v2: one message, two actions ===== */
+.hero{min-height:clamp(540px,86vh,820px)}
+.hero::before{background:linear-gradient(95deg,rgba(5,11,69,.94) 0%,rgba(10,22,128,.72) 45%,rgba(10,22,128,.15) 80%)}
+.hero .wrap{padding-block:110px 150px}
+.hero-copy{max-width:680px}
+.hero-kicker{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--f-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#dbe5ff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:.45rem .9rem;border-radius:999px;backdrop-filter:blur(8px);margin-bottom:1.6rem;opacity:0;animation:fade .8s .1s forwards}
+.hero-kicker i{width:8px;height:8px;border-radius:50%;background:var(--sky);box-shadow:0 0 0 0 rgba(141,212,248,.7);animation:pulse 2s infinite}
+.hero h1{font-size:clamp(2.1rem,6.4vw,5.2rem);line-height:1.02}
+.hero .lead{font-size:clamp(1rem,1.5vw,1.2rem);max-width:42ch;margin-top:1.3rem}
+.hero .actions{margin-top:2rem}
+.hero .actions .btn-ghost svg{width:18px;height:18px}
+.hero-dots{bottom:110px}
+
+@media (max-width:760px){
+  .hero{min-height:auto}
+  .hero::before{background:linear-gradient(180deg,rgba(5,11,69,.78) 0%,rgba(10,22,128,.82) 55%,rgba(5,11,69,.95) 100%)}
+  .hero .wrap{padding-block:64px 130px}
+  .hero-kicker{font-size:.66rem;letter-spacing:.08em;margin-bottom:1.1rem}
+  .hero .lead{font-size:.98rem}
+  .hero .actions{gap:.7rem}
+  .hero .actions .btn{flex:1 1 180px;justify-content:center;padding:.85rem 1.1rem;font-size:.95rem}
+  .hero-dots{bottom:100px}
+}
+
+/* ===== Smaller type on phones site-wide ===== */
+@media (max-width:600px){
+  body{font-size:15.5px}
+  h2{font-size:clamp(1.6rem,7vw,2rem)}
+  h3{font-size:1.2rem}
+  .lead{font-size:1rem}
+  .sec{padding-block:60px}
+  .sec-head{margin-bottom:2rem}
+  .page-hero h1{font-size:clamp(1.9rem,8vw,2.4rem)}
+  .page-hero .wrap{padding-block:70px 60px}
+  .marquee span{font-size:1.15rem;gap:2rem}
+  .stat b{font-size:2rem}
+  .cta-band h2{font-size:1.7rem}
+  .collage{padding:0 0 40px 20px}
+  .collage .badge{right:0}
+  .svc{min-height:300px}
+  .btn{padding:.85rem 1.25rem}
+}
+.hero-copy{max-width:880px}.hero h1{font-size:clamp(2.1rem,5.6vw,4.6rem)}

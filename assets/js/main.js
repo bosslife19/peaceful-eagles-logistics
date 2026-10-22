@@ -142,7 +142,7 @@ document.documentElement.classList.add('js');
         <ol class="timeline">${d.events.map((e, n) => `<li class="${e[2]}" style="animation-delay:${n * .12}s"><b>${e[0]}</b><small>${e[1] || 'Pending'}</small></li>`).join('')}</ol>`;
       requestAnimationFrame(() => setTimeout(() => { $('.progress i', out).style.width = d.pct + '%'; }, 60));
     };
-    tForm.addEventListener('submit', e => { e.preventDefault(); const v = $('#trackId').value.trim(); if (v) render(v); });
+    tForm.addEventListener('submit', e => { e.preventDefault(); const v = $('#trackId').value.trim(); if (v) { render(v); if (innerWidth < 900) out.scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
     $$('.hint code').forEach(c => c.addEventListener('click', () => { $('#trackId').value = c.textContent; render(c.textContent); }));
     const q = new URLSearchParams(location.search).get('id');
     if (q) { $('#trackId').value = q; render(q); }
